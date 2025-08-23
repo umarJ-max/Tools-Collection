@@ -1,0 +1,30 @@
+{
+  "name": "developer-tools-collection",
+  "version": "1.0.0",
+  "description": "A beautifully animated website to showcase development tools and projects",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "developer-tools",
+    "portfolio",
+    "showcase",
+    "static-site",
+    "animations",
+    "responsive",
+    "web-development"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url-here"
+  },
+  "homepage": "your-vercel-url-here",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
