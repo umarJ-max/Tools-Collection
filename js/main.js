@@ -1,8 +1,41 @@
+// Security utilities
+const SecurityUtils = {
+    // Sanitize HTML input to prevent XSS
+    sanitizeHtml: (str) => {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    },
+    
+    // Validate URLs
+    isValidUrl: (url) => {
+        try {
+            const urlObj = new URL(url);
+            return ['http:', 'https:'].includes(urlObj.protocol);
+        } catch {
+            return false;
+        }
+    },
+    
+    // Rate limiting for search
+    debounce: (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+};
+
 // Main JavaScript functionality
 class ToolsCollection {
     constructor() {
         this.currentPage = 1;
-        this.toolsPerPage = 12; // Show all tools since we only have 5
+        this.toolsPerPage = 12; // Show all tools since we have 14
         this.searchQuery = '';
         this.filteredTools = [];
         this.isLoading = false;
@@ -19,10 +52,20 @@ class ToolsCollection {
     }
 
     setupEventListeners() {
-        // Search input
+        // Search input with debouncing for security
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
-            searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
+            const debouncedSearch = SecurityUtils.debounce((value) => this.handleSearch(value), 300);
+            searchInput.addEventListener('input', (e) => {
+                const sanitizedValue = SecurityUtils.sanitizeHtml(e.target.value);
+                debouncedSearch(sanitizedValue);
+            });
+            // Prevent common XSS attempts
+            searchInput.addEventListener('paste', (e) => {
+                setTimeout(() => {
+                    e.target.value = SecurityUtils.sanitizeHtml(e.target.value);
+                }, 10);
+            });
         }
 
         // Modal close
@@ -158,13 +201,13 @@ class ToolsCollection {
                     <i class="fas fa-info-circle"></i>
                     Details
                 </button>
-                <a href="${tool.demoUrl}" class="action-btn" target="_blank">
-                    <i class="fas fa-external-link-alt"></i>
-                    Use Tool
-                </a>
-                <a href="${tool.githubUrl}" class="action-btn" target="_blank">
+                <a href="${tool.githubUrl}" class="action-btn" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                     Code
+                </a>
+                <a href="${tool.demoUrl}" class="action-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i>
+                    Use Tool
                 </a>
             </div>
         `;
@@ -225,13 +268,13 @@ class ToolsCollection {
             </div>
             
             <div class="tool-detail-actions">
-                <a href="${tool.demoUrl}" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-external-link-alt"></i>
-                    Use Tool
-                </a>
-                <a href="${tool.githubUrl}" class="btn btn-secondary" target="_blank">
+                <a href="${tool.githubUrl}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                     View Code
+                </a>
+                <a href="${tool.demoUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i>
+                    Use Tool
                 </a>
             </div>
         `;
