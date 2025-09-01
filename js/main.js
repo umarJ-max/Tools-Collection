@@ -159,10 +159,6 @@ class ToolsCollection {
                     Details
                 </button>
                 <a href="${tool.demoUrl}" class="action-btn" target="_blank">
-                    <i class="fas fa-play"></i>
-                    Demo
-                </a>
-                <a href="${tool.downloadUrl}" class="action-btn" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                     Use Tool
                 </a>
@@ -226,11 +222,7 @@ class ToolsCollection {
             
             <div class="tool-detail-actions">
                 <a href="${tool.demoUrl}" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-play"></i>
-                    Try Demo
-                </a>
-                <a href="${tool.downloadUrl}" class="btn btn-outline" target="_blank">
-                    <i class="fas fa-download"></i>
+                    <i class="fas fa-external-link-alt"></i>
                     Use Tool
                 </a>
             </div>
