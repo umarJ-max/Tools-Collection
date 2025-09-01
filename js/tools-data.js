@@ -1,333 +1,93 @@
-// Sample tools data - Replace this with your actual tools
+// Umar J's real projects and tools
 const toolsData = [
     {
         id: 1,
-        name: "Code Formatter Pro",
+        name: "Drive to Drive Uploader",
         category: "web",
-        description: "Advanced code formatting tool that supports multiple programming languages with customizable rules and real-time preview.",
-        icon: "fas fa-code",
-        technologies: ["JavaScript", "CSS", "HTML", "Python"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
+        description: "Upload files directly from one Google Drive to another without downloading. My biggest and most popular project that helps thousands of users transfer files seamlessly!",
+        icon: "fas fa-cloud-upload-alt",
+        technologies: ["Google Apps Script", "JavaScript", "OAuth 2.0"],
+        demoUrl: "https://script.google.com/macros/s/AKfycbxdJYgCNzyfqj6AhlrNCP2tLdeiKPr8JWI3O0dgJ-FWCteYY92y3dmrb1eEw1k1EGNO/exec",
+        githubUrl: "https://github.com/umarJ-max",
+        downloadUrl: "https://script.google.com/macros/s/AKfycbxdJYgCNzyfqj6AhlrNCP2tLdeiKPr8JWI3O0dgJ-FWCteYY92y3dmrb1eEw1k1EGNO/exec",
         features: [
-            "Multi-language support",
-            "Real-time formatting",
-            "Custom rules engine",
-            "Batch processing",
-            "VS Code integration"
-        ],
-        screenshots: [
-            "assets/screenshots/formatter-1.jpg",
-            "assets/screenshots/formatter-2.jpg"
+            "Direct Google Drive to Drive transfer",
+            "No download/upload required",
+            "Secure OAuth authentication",
+            "Works on any device with internet",
+            "Saves time and bandwidth"
         ]
     },
     {
         id: 2,
-        name: "API Testing Suite",
-        category: "api",
-        description: "Comprehensive API testing framework with automated testing, mock responses, and detailed reporting capabilities.",
-        icon: "fas fa-plug",
-        technologies: ["Node.js", "Express", "MongoDB", "Jest"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
+        name: "ULTIMATE Drive Downloader",
+        category: "web",
+        description: "Download any file or folder from Google Drive with just a link. My second biggest project that makes Google Drive downloads super easy and fast!",
+        icon: "fas fa-download",
+        technologies: ["Google Apps Script", "JavaScript", "Drive API"],
+        demoUrl: "https://script.google.com/macros/s/AKfycbw02NxUZO3kjSpdEuqNG4hATcmziTfGHze5xcNrjh0oG8zqOyQkstwLLjNocUMjCZbb/exec",
+        githubUrl: "https://github.com/umarJ-max",
+        downloadUrl: "https://script.google.com/macros/s/AKfycbw02NxUZO3kjSpdEuqNG4hATcmziTfGHze5xcNrjh0oG8zqOyQkstwLLjNocUMjCZbb/exec",
         features: [
-            "Automated API testing",
-            "Mock server creation",
-            "Performance monitoring",
-            "CI/CD integration",
-            "Detailed reporting"
-        ],
-        screenshots: [
-            "assets/screenshots/api-suite-1.jpg",
-            "assets/screenshots/api-suite-2.jpg"
+            "Download Google Drive files/folders instantly",
+            "No sign-in required for public files",
+            "Fast and simple interface",
+            "Bypass Google Drive download limits",
+            "Works with any Google Drive link"
         ]
     },
     {
         id: 3,
-        name: "Mobile App Builder",
-        category: "mobile",
-        description: "Drag-and-drop mobile app builder with native code generation and cloud deployment capabilities.",
-        icon: "fas fa-mobile-alt",
-        technologies: ["React Native", "TypeScript", "Firebase", "AWS"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
+        name: "Text to QRCode Generator",
+        category: "utility",
+        description: "Convert any text, URL, or message into a beautiful QR code instantly. Perfect for sharing WiFi passwords, links, or contact information!",
+        icon: "fas fa-qrcode",
+        technologies: ["JavaScript", "HTML5", "CSS3", "Vercel"],
+        demoUrl: "https://text-to-qr-code-eta.vercel.app/",
+        githubUrl: "https://github.com/umarJ-max",
+        downloadUrl: "https://text-to-qr-code-eta.vercel.app/",
         features: [
-            "Visual app builder",
-            "Native code generation",
-            "Cloud deployment",
-            "Real-time preview",
-            "Store publishing"
-        ],
-        screenshots: [
-            "assets/screenshots/mobile-builder-1.jpg",
-            "assets/screenshots/mobile-builder-2.jpg"
+            "Instant QR code generation",
+            "Download QR codes as images",
+            "Clean and modern interface",
+            "Mobile-friendly design",
+            "No limits, completely free"
         ]
     },
     {
         id: 4,
-        name: "Database Migration Tool",
-        category: "utility",
-        description: "Powerful database migration and synchronization tool supporting multiple database systems with version control.",
-        icon: "fas fa-database",
-        technologies: ["Python", "SQLAlchemy", "PostgreSQL", "MySQL"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
+        name: "Gun, Snake, Water Game",
+        category: "game",
+        description: "A fun and addictive browser game based on the classic Rock-Paper-Scissors concept. Play against the computer and test your strategy skills!",
+        icon: "fas fa-gamepad",
+        technologies: ["JavaScript", "HTML5", "CSS3", "Vercel"],
+        demoUrl: "https://gun-water-snake-game.vercel.app/",
+        githubUrl: "https://github.com/umarJ-max",
+        downloadUrl: "https://gun-water-snake-game.vercel.app/",
         features: [
-            "Multi-database support",
-            "Version control",
-            "Rollback capabilities",
-            "Schema comparison",
-            "Automated backups"
-        ],
-        screenshots: [
-            "assets/screenshots/db-migration-1.jpg",
-            "assets/screenshots/db-migration-2.jpg"
+            "Classic Gun-Snake-Water gameplay",
+            "Play against smart computer AI",
+            "Score tracking and statistics",
+            "Responsive design for all devices",
+            "Simple and addictive gameplay"
         ]
     },
     {
         id: 5,
-        name: "Web Performance Analyzer",
-        category: "web",
-        description: "Advanced web performance analysis tool with lighthouse integration, performance budgets, and optimization suggestions.",
-        icon: "fas fa-tachometer-alt",
-        technologies: ["JavaScript", "Puppeteer", "Lighthouse", "Chart.js"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
+        name: "The Perfect Guess Game",
+        category: "game",
+        description: "Test your intuition and luck! Guess the secret number in this engaging number guessing game. Simple to play but hard to master!",
+        icon: "fas fa-dice",
+        technologies: ["JavaScript", "HTML5", "CSS3", "Vercel"],
+        demoUrl: "https://the-perfect-guess-game.vercel.app/",
+        githubUrl: "https://github.com/umarJ-max",
+        downloadUrl: "https://the-perfect-guess-game.vercel.app/",
         features: [
-            "Performance auditing",
-            "Lighthouse integration",
-            "Performance budgets",
-            "Optimization tips",
-            "Historical tracking"
-        ],
-        screenshots: [
-            "assets/screenshots/perf-analyzer-1.jpg",
-            "assets/screenshots/perf-analyzer-2.jpg"
-        ]
-    },
-    {
-        id: 6,
-        name: "Desktop Automation Suite",
-        category: "desktop",
-        description: "Cross-platform desktop automation tool with macro recording, task scheduling, and GUI automation capabilities.",
-        icon: "fas fa-robot",
-        technologies: ["Electron", "Python", "PyAutoGUI", "SQLite"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Macro recording",
-            "Task scheduling",
-            "GUI automation",
-            "Cross-platform",
-            "Script editor"
-        ],
-        screenshots: [
-            "assets/screenshots/automation-1.jpg",
-            "assets/screenshots/automation-2.jpg"
-        ]
-    },
-    {
-        id: 7,
-        name: "Cloud Storage Manager",
-        category: "utility",
-        description: "Unified cloud storage management interface supporting multiple providers with sync, backup, and sharing features.",
-        icon: "fas fa-cloud",
-        technologies: ["Vue.js", "Node.js", "AWS SDK", "Google Cloud"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Multi-provider support",
-            "File synchronization",
-            "Automated backups",
-            "Sharing controls",
-            "Usage analytics"
-        ],
-        screenshots: [
-            "assets/screenshots/cloud-manager-1.jpg",
-            "assets/screenshots/cloud-manager-2.jpg"
-        ]
-    },
-    {
-        id: 8,
-        name: "Real-time Chat Engine",
-        category: "web",
-        description: "Scalable real-time chat engine with message encryption, file sharing, and multi-platform support.",
-        icon: "fas fa-comments",
-        technologies: ["Socket.io", "Redis", "MongoDB", "React"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Real-time messaging",
-            "End-to-end encryption",
-            "File sharing",
-            "Group chats",
-            "Message history"
-        ],
-        screenshots: [
-            "assets/screenshots/chat-engine-1.jpg",
-            "assets/screenshots/chat-engine-2.jpg"
-        ]
-    },
-    {
-        id: 9,
-        name: "AI Image Processor",
-        category: "utility",
-        description: "AI-powered image processing tool with background removal, upscaling, and batch processing capabilities.",
-        icon: "fas fa-image",
-        technologies: ["Python", "TensorFlow", "OpenCV", "Flask"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "AI background removal",
-            "Image upscaling",
-            "Batch processing",
-            "Format conversion",
-            "Quality enhancement"
-        ],
-        screenshots: [
-            "assets/screenshots/ai-processor-1.jpg",
-            "assets/screenshots/ai-processor-2.jpg"
-        ]
-    },
-    {
-        id: 10,
-        name: "IoT Device Manager",
-        category: "api",
-        description: "Comprehensive IoT device management platform with real-time monitoring, remote control, and data analytics.",
-        icon: "fas fa-microchip",
-        technologies: ["MQTT", "InfluxDB", "Grafana", "Docker"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Device monitoring",
-            "Remote control",
-            "Data analytics",
-            "Alert system",
-            "Firmware updates"
-        ],
-        screenshots: [
-            "assets/screenshots/iot-manager-1.jpg",
-            "assets/screenshots/iot-manager-2.jpg"
-        ]
-    },
-    {
-        id: 11,
-        name: "Video Conference Tool",
-        category: "web",
-        description: "WebRTC-based video conferencing solution with screen sharing, recording, and virtual backgrounds.",
-        icon: "fas fa-video",
-        technologies: ["WebRTC", "Socket.io", "MediaSoup", "React"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "HD video calls",
-            "Screen sharing",
-            "Meeting recording",
-            "Virtual backgrounds",
-            "Chat integration"
-        ],
-        screenshots: [
-            "assets/screenshots/video-conf-1.jpg",
-            "assets/screenshots/video-conf-2.jpg"
-        ]
-    },
-    {
-        id: 12,
-        name: "Blockchain Explorer",
-        category: "web",
-        description: "Multi-chain blockchain explorer with transaction tracking, wallet analysis, and DeFi integration.",
-        icon: "fas fa-link",
-        technologies: ["Web3.js", "Ethereum", "Next.js", "GraphQL"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Multi-chain support",
-            "Transaction tracking",
-            "Wallet analysis",
-            "DeFi integration",
-            "Real-time updates"
-        ],
-        screenshots: [
-            "assets/screenshots/blockchain-1.jpg",
-            "assets/screenshots/blockchain-2.jpg"
-        ]
-    },
-    {
-        id: 13,
-        name: "Password Manager Pro",
-        category: "desktop",
-        description: "Secure password manager with biometric authentication, secure sharing, and breach monitoring.",
-        icon: "fas fa-key",
-        technologies: ["Electron", "SQLCipher", "Argon2", "TypeScript"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Military-grade encryption",
-            "Biometric unlock",
-            "Secure sharing",
-            "Breach monitoring",
-            "Auto-fill support"
-        ],
-        screenshots: [
-            "assets/screenshots/password-mgr-1.jpg",
-            "assets/screenshots/password-mgr-2.jpg"
-        ]
-    },
-    {
-        id: 14,
-        name: "Social Media Analytics",
-        category: "api",
-        description: "Comprehensive social media analytics platform with sentiment analysis, competitor tracking, and reporting.",
-        icon: "fas fa-chart-line",
-        technologies: ["Python", "Pandas", "Matplotlib", "Twitter API"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "Multi-platform analytics",
-            "Sentiment analysis",
-            "Competitor tracking",
-            "Custom reports",
-            "Trend prediction"
-        ],
-        screenshots: [
-            "assets/screenshots/social-analytics-1.jpg",
-            "assets/screenshots/social-analytics-2.jpg"
-        ]
-    },
-    {
-        id: 15,
-        name: "Game Development Kit",
-        category: "utility",
-        description: "Complete 2D game development framework with physics engine, asset management, and cross-platform deployment.",
-        icon: "fas fa-gamepad",
-        technologies: ["C++", "OpenGL", "Box2D", "CMake"],
-        demoUrl: "#",
-        githubUrl: "#",
-        downloadUrl: "#",
-        features: [
-            "2D physics engine",
-            "Asset management",
-            "Scene editor",
-            "Cross-platform",
-            "Scripting support"
-        ],
-        screenshots: [
-            "assets/screenshots/game-kit-1.jpg",
-            "assets/screenshots/game-kit-2.jpg"
+            "Random number guessing challenge",
+            "Multiple difficulty levels",
+            "Score tracking system",
+            "Fun for all ages",
+            "Responsive and mobile-friendly"
         ]
     }
 ];

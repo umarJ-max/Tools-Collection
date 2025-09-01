@@ -1,9 +1,8 @@
 // Main JavaScript functionality
 class ToolsCollection {
     constructor() {
-        this.currentFilter = 'all';
         this.currentPage = 1;
-        this.toolsPerPage = 6;
+        this.toolsPerPage = 12; // Show all tools since we only have 5
         this.searchQuery = '';
         this.filteredTools = [];
         this.isLoading = false;
@@ -20,22 +19,10 @@ class ToolsCollection {
     }
 
     setupEventListeners() {
-        // Filter buttons
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => this.handleFilterClick(btn));
-        });
-
         // Search input
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
-        }
-
-        // Load more button
-        const loadMoreBtn = document.getElementById('load-more-btn');
-        if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => this.loadMoreTools());
         }
 
         // Modal close
@@ -98,19 +85,6 @@ class ToolsCollection {
         });
     }
 
-    handleFilterClick(btn) {
-        // Update active filter button
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        // Update current filter
-        this.currentFilter = btn.dataset.filter;
-        this.currentPage = 1;
-        
-        // Reload tools
-        this.loadTools();
-    }
-
     handleSearch(query) {
         this.searchQuery = query.toLowerCase().trim();
         this.currentPage = 1;
@@ -120,12 +94,7 @@ class ToolsCollection {
     filterTools() {
         let filtered = window.toolsData || [];
 
-        // Apply category filter
-        if (this.currentFilter !== 'all') {
-            filtered = filtered.filter(tool => tool.category === this.currentFilter);
-        }
-
-        // Apply search filter
+        // Apply search filter only
         if (this.searchQuery) {
             filtered = filtered.filter(tool => 
                 tool.name.toLowerCase().includes(this.searchQuery) ||
@@ -140,7 +109,6 @@ class ToolsCollection {
 
     loadTools() {
         const toolsGrid = document.getElementById('tools-grid');
-        const loadMoreBtn = document.getElementById('load-more-btn');
         
         if (!toolsGrid) return;
 
@@ -150,41 +118,20 @@ class ToolsCollection {
         // Simulate loading delay for better UX
         setTimeout(() => {
             const filtered = this.filterTools();
-            const startIndex = 0;
-            const endIndex = this.currentPage * this.toolsPerPage;
-            const toolsToShow = filtered.slice(startIndex, endIndex);
+            
+            // Clear grid
+            toolsGrid.innerHTML = '';
 
-            // Clear grid if it's a new filter/search
-            if (this.currentPage === 1) {
-                toolsGrid.innerHTML = '';
-            }
-
-            // Add tools to grid
-            toolsToShow.forEach((tool, index) => {
-                if (index >= (this.currentPage - 1) * this.toolsPerPage) {
-                    this.createToolCard(tool, toolsGrid);
-                }
+            // Add all filtered tools to grid
+            filtered.forEach((tool) => {
+                this.createToolCard(tool, toolsGrid);
             });
-
-            // Update load more button visibility
-            if (loadMoreBtn) {
-                if (endIndex >= filtered.length) {
-                    loadMoreBtn.style.display = 'none';
-                } else {
-                    loadMoreBtn.style.display = 'inline-flex';
-                }
-            }
 
             // Update results count
             this.updateResultsCount(filtered.length);
 
             this.setLoadingState(false);
         }, 300);
-    }
-
-    loadMoreTools() {
-        this.currentPage++;
-        this.loadTools();
     }
 
     createToolCard(tool, container) {
