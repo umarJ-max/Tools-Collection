@@ -162,6 +162,10 @@ class ToolsCollection {
                     <i class="fas fa-external-link-alt"></i>
                     Use Tool
                 </a>
+                <a href="${tool.githubUrl}" class="action-btn" target="_blank">
+                    <i class="fab fa-github"></i>
+                    Code
+                </a>
             </div>
         `;
 
@@ -224,6 +228,10 @@ class ToolsCollection {
                 <a href="${tool.demoUrl}" class="btn btn-primary" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                     Use Tool
+                </a>
+                <a href="${tool.githubUrl}" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i>
+                    View Code
                 </a>
             </div>
         `;
