@@ -76,6 +76,16 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .btn, .filter-btn, .action-btn, .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 /* Scrollbar Styling */
@@ -570,7 +580,7 @@ body {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);
 }
@@ -1010,57 +1020,128 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .hero-container {
+        gap: var(--spacing-lg);
+    }
+    
+    .about-content {
+        gap: var(--spacing-lg);
+    }
+}
+
 @media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Navigation improvements */
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Hero section mobile layout */
+    .hero {
+        padding: 120px 0 var(--spacing-xl);
+        min-height: auto;
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
         text-align: center;
     }
     
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin: 0 auto var(--spacing-lg);
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
     .hero-visual {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
     
     .hero-card:nth-child(1) {
         grid-column: 1;
     }
     
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+    .hero-card {
+        padding: var(--spacing-md);
     }
     
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+    .hero-card i {
+        font-size: 2rem;
     }
     
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+    .hero-card h3 {
+        font-size: 1.1rem;
     }
     
-    .filter-container {
-        gap: var(--spacing-md);
-    }
-    
-    .filter-tabs {
-        gap: var(--spacing-xs);
-    }
-    
-    .filter-btn {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: 0.8rem;
-    }
-    
+    /* Tools section mobile */
     .tools-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
     
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
+    .tool-card {
+        padding: var(--spacing-md);
+    }
+    
+    .tool-header {
+        gap: var(--spacing-sm);
+    }
+    
+    .tool-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .tool-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tool-actions {
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .action-btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    /* About section mobile */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .about-description {
+        font-size: 1rem;
     }
     
     .tech-stack {
@@ -1068,21 +1149,99 @@ body {
         gap: var(--spacing-sm);
     }
     
+    .tech-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .tech-item i {
+        font-size: 2rem;
+    }
+    
+    /* Stats section mobile */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    /* Footer mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .footer-brand {
+        max-width: none;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    /* Filter improvements */
+    .filter-container {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .filter-tabs {
+        gap: var(--spacing-xs);
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+    
+    /* Navigation mobile menu */
     .nav-menu {
         position: fixed;
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: var(--bg-secondary);
+        background: rgba(26, 26, 58, 0.98);
+        backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
         transition: var(--transition-normal);
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-lg) 0;
+        border-top: 1px solid var(--border-color);
     }
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+        display: block;
+        width: 100%;
     }
     
     .nav-toggle {
@@ -1103,36 +1262,114 @@ body {
 }
 
 @media (max-width: 480px) {
+    /* Ultra mobile specific adjustments */
     .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-xs);
+        height: 60px;
+    }
+    
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-logo i {
+        font-size: 1.5rem;
     }
     
     .hero {
-        padding: var(--spacing-xl) 0;
+        padding: 100px 0 var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
     }
     
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: var(--spacing-sm);
     }
     
     .btn {
         width: 100%;
+        max-width: 280px;
         justify-content: center;
-        max-width: 250px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .hero-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .tool-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .tool-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .tool-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        width: 100%;
     }
     
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-card {
+        padding: var(--spacing-sm);
     }
     
     .tech-stack {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+    
+    .tech-item {
+        padding: var(--spacing-xs);
+    }
+    
+    .tech-item i {
+        font-size: 1.8rem;
     }
     
     .modal-content {
         width: 95%;
-        margin: var(--spacing-sm);
+        margin: var(--spacing-xs);
+    }
+    
+    .modal-header {
+        padding: var(--spacing-md);
+    }
+    
+    .modal-body {
+        padding: var(--spacing-md);
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
     }
 }
 
