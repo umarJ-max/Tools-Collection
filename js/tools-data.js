@@ -7,9 +7,9 @@ const toolsData = [
         description: "Upload files directly from one Google Drive to another without downloading. My biggest and most popular project that helps thousands of users transfer files seamlessly!",
         icon: "fas fa-cloud-upload-alt",
         technologies: ["Google Apps Script", "JavaScript", "OAuth 2.0"],
-        demoUrl: "https://script.google.com/macros/s/AKfycbxdJYgCNzyfqj6AhlrNCP2tLdeiKPr8JWI3O0dgJ-FWCteYY92y3dmrb1eEw1k1EGNO/exec",
+        demoUrl: "https://script.google.com/macros/s/AKfycbzVgsOWqUD28F0nsJsKYHN2WptsAZO2kX2H3Uo31uDPsXHvImsnn9-YqzG1_24mLslv/exec",
         githubUrl: "https://github.com/umarJ-max",
-        downloadUrl: "https://script.google.com/macros/s/AKfycbxdJYgCNzyfqj6AhlrNCP2tLdeiKPr8JWI3O0dgJ-FWCteYY92y3dmrb1eEw1k1EGNO/exec",
+        downloadUrl: "https://script.google.com/macros/s/AKfycbzVgsOWqUD28F0nsJsKYHN2WptsAZO2kX2H3Uo31uDPsXHvImsnn9-YqzG1_24mLslv/exec",
         features: [
             "Direct Google Drive to Drive transfer",
             "No download/upload required",
