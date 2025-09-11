@@ -35,7 +35,7 @@ const SecurityUtils = {
 class ToolsCollection {
     constructor() {
         this.currentPage = 1;
-        this.toolsPerPage = 12; // Show all tools since we have 14
+        this.toolsPerPage = 12; // Show all tools since we have 14+ tools now
         this.searchQuery = '';
         this.filteredTools = [];
         this.isLoading = false;
@@ -441,7 +441,9 @@ class ToolsCollection {
     }
 
     animateNumber(element) {
-        const target = parseInt(element.dataset.target);
+        const targetText = element.dataset.target;
+        const hasPlus = targetText.includes('+');
+        const target = parseInt(targetText);
         const increment = target / 100;
         let current = 0;
 
@@ -451,7 +453,7 @@ class ToolsCollection {
                 element.textContent = Math.floor(current).toLocaleString();
                 requestAnimationFrame(updateNumber);
             } else {
-                element.textContent = target.toLocaleString();
+                element.textContent = hasPlus ? target.toLocaleString() + '+' : target.toLocaleString();
             }
         };
 
