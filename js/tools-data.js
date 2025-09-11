@@ -292,3 +292,7 @@ const toolsData = [
 
 // Export for use in main.js
 window.toolsData = toolsData;
+
+// Debug: Log the number of tools
+console.log('Total tools loaded:', toolsData.length);
+console.log('Latest tools:', toolsData.slice(-2).map(t => t.name));
