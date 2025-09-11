@@ -251,6 +251,42 @@ const toolsData = [
             "High-quality downloads",
             "Simple and fast interface"
         ]
+    },
+    {
+        id: 15,
+        name: "PDF Merger",
+        category: "utility",
+        description: "Merge multiple PDF files into a single document effortlessly. Perfect for combining documents, reports, or any PDF files you need to unite!",
+        icon: "fas fa-file-pdf",
+        technologies: ["JavaScript", "PDF-lib", "HTML5", "Vercel"],
+        demoUrl: "https://pdf-merger-ebon.vercel.app/",
+        githubUrl: "https://github.com/umarJ-max/PDF-Merger",
+        downloadUrl: "https://pdf-merger-ebon.vercel.app/",
+        features: [
+            "Merge multiple PDF files",
+            "Drag and drop interface",
+            "Client-side processing",
+            "No file upload to servers",
+            "Fast and secure merging"
+        ]
+    },
+    {
+        id: 16,
+        name: "Text To Speech",
+        category: "utility",
+        description: "Convert any text into natural-sounding speech with multiple voice options. Perfect for accessibility, learning, or content consumption!",
+        icon: "fas fa-volume-up",
+        technologies: ["JavaScript", "Web Speech API", "HTML5", "Vercel"],
+        demoUrl: "https://text-to-speech-teal-eight.vercel.app/",
+        githubUrl: "https://github.com/umarJ-max/Text-To-speech",
+        downloadUrl: "https://text-to-speech-teal-eight.vercel.app/",
+        features: [
+            "Natural text-to-speech conversion",
+            "Multiple voice options",
+            "Adjustable speech rate and pitch",
+            "Browser-based, no downloads",
+            "Supports multiple languages"
+        ]
     }
 ];
 
